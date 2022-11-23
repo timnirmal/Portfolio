@@ -3,7 +3,7 @@ import {AiOutlineStar, AiOutlineFork} from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import {ga, languageColor, skeleton} from '../../helpers/utils';
 
-const Project = ({repo, loading, github, googleAnalytics}) => {
+const Project = ({repo, loading, github}) => {
     if (!loading && Array.isArray(repo) && repo.length === 0) {
         return <></>;
     }
@@ -64,14 +64,14 @@ const Project = ({repo, loading, github, googleAnalytics}) => {
                     e.preventDefault();
 
                     try {
-                        if (googleAnalytics?.id) {
-                            ga.event({
-                                action: 'Click project',
-                                params: {
-                                    project: item.name,
-                                },
-                            });
-                        }
+
+                        ga.event({
+                            action: 'Click project',
+                            params: {
+                                project: item.name,
+                            },
+                        });
+
                     } catch (error) {
                         console.error(error);
                     }
@@ -165,7 +165,6 @@ Project.propTypes = {
     repo: PropTypes.array,
     loading: PropTypes.bool.isRequired,
     github: PropTypes.object.isRequired,
-    googleAnalytics: PropTypes.object.isRequired,
 };
 
 export default Project;

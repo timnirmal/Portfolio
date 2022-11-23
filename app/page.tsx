@@ -48,7 +48,7 @@ export default function Page() {
         fileUrl: "https:",
     }
 
-    console.log("Sanitized Config", sanitizeConfig.resume);
+    // console.log("Sanitized Config", sanitizeConfig.resume);
 
     let github = {
         username: "timnirmal",
@@ -69,20 +69,20 @@ export default function Page() {
 
     let skills = ["Python","TypeScript", "NextJS", "Tailwind"]
 
-    let experiences = [
-        // {
-        //     company: "Company",
-        //     position: "Position",
-        //     date: "Date",
-        //     description: "Description",
-        // },
-        // {
-        //     company: "Company",
-        //     position: "Position",
-        //     date: "Date",
-        //     description: "Description",
-        // }
-    ]
+    // let experiences = [
+    //     // {
+    //     //     company: "Company",
+    //     //     position: "Position",
+    //     //     date: "Date",
+    //     //     description: "Description",
+    //     // },
+    //     // {
+    //     //     company: "Company",
+    //     //     position: "Position",
+    //     //     date: "Date",
+    //     //     description: "Description",
+    //     // }
+    // ]
 
     let academic = [
         {
@@ -205,10 +205,10 @@ export default function Page() {
                             social={social}
                         />
 
-                        <Experience
-                            loading={loading}
-                            experiences={experiences}
-                        />
+                        {/*<Experience*/}
+                        {/*    loading={loading}*/}
+                        {/*    experiences={experiences}*/}
+                        {/*/>*/}
                         <Academic
                             loading={loading}
                             academic={academic}
@@ -230,7 +230,6 @@ export default function Page() {
                             repo={projects}
                             loading={loading}
                             github={github}
-                            googleAnalytics={sanitizeConfig.googleAnalytics}
                         />
                         {/*<Blog*/}
                         {/*    loading={loading}*/}
