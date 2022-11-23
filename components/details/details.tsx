@@ -1,14 +1,14 @@
-import { MdLocationOn, MdMail } from 'react-icons/md';
+import {MdLocationOn, MdMail} from 'react-icons/md';
 import {
     AiFillGithub,
     AiFillInstagram,
     AiFillMediumSquare,
 } from 'react-icons/ai';
-import { SiTwitter } from 'react-icons/si';
-import { GrLinkedinOption } from 'react-icons/gr';
-import { CgDribbble } from 'react-icons/cg';
-import { RiPhoneFill } from 'react-icons/ri';
-import { Fragment } from 'react';
+import {SiTwitter} from 'react-icons/si';
+import {GrLinkedinOption} from 'react-icons/gr';
+import {CgDribbble} from 'react-icons/cg';
+import {RiPhoneFill} from 'react-icons/ri';
+import {Fragment} from 'react';
 import {
     FaBehanceSquare,
     FaBuilding,
@@ -18,9 +18,9 @@ import {
     FaStackOverflow,
 } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import { skeleton } from '../../helpers/utils';
+import {skeleton} from '../../helpers/utils';
 
-const ListItem = ({ icon, title, value, link, skeleton = false }) => {
+const ListItem = ({icon, title, value, link, skeleton = false}) => {
     return (
         <a
             href={link}
@@ -55,7 +55,7 @@ const companyLink = (company) => {
     return `https://github.com/${company.substring(1)}`;
 };
 
-const Details = ({ profile, loading, social, github }) => {
+const Details = ({profile, loading, social, github}) => {
     const renderSkeleton = () => {
         let array = [];
         for (let index = 0; index < 4; index++) {
@@ -63,9 +63,9 @@ const Details = ({ profile, loading, social, github }) => {
                 <ListItem
                     key={index}
                     skeleton={true}
-                    icon={skeleton({ width: 'w-4', height: 'h-4' })}
-                    title={skeleton({ width: 'w-24', height: 'h-4' })}
-                    value={skeleton({ width: 'w-full', height: 'h-4' })}
+                    icon={skeleton({width: 'w-4', height: 'h-4'})}
+                    title={skeleton({width: 'w-24', height: 'h-4'})}
+                    value={skeleton({width: 'w-full', height: 'h-4'})}
                 />
             );
         }
@@ -83,14 +83,14 @@ const Details = ({ profile, loading, social, github }) => {
                         <Fragment>
                             {profile.location && (
                                 <ListItem
-                                    icon={<MdLocationOn className="mr-2" />}
+                                    icon={<MdLocationOn className="mr-2"/>}
                                     title="Based in:"
                                     value={profile.location}
                                 />
                             )}
                             {profile.company && (
                                 <ListItem
-                                    icon={<FaBuilding className="mr-2" />}
+                                    icon={<FaBuilding className="mr-2"/>}
                                     title="Company:"
                                     value={profile.company}
                                     link={
@@ -100,15 +100,23 @@ const Details = ({ profile, loading, social, github }) => {
                                     }
                                 />
                             )}
+                            {social?.email && (
+                                <ListItem
+                                    icon={<MdMail className="mr-2"/>}
+                                    title="Email:"
+                                    value={social.email}
+                                    link={`mailto:${social.email}`}
+                                />
+                            )}
                             <ListItem
-                                icon={<AiFillGithub className="mr-2" />}
+                                icon={<AiFillGithub className="mr-2"/>}
                                 title="GitHub:"
                                 value={github.username}
                                 link={`https://github.com/${github.username}`}
                             />
                             {social?.twitter && (
                                 <ListItem
-                                    icon={<SiTwitter className="mr-2" />}
+                                    icon={<SiTwitter className="mr-2"/>}
                                     title="Twitter:"
                                     value={social.twitter}
                                     link={`https://twitter.com/${social.twitter}`}
@@ -116,7 +124,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.linkedin && (
                                 <ListItem
-                                    icon={<GrLinkedinOption className="mr-2" />}
+                                    icon={<GrLinkedinOption className="mr-2"/>}
                                     title="LinkedIn:"
                                     value={social.linkedin}
                                     link={`https://www.linkedin.com/in/${social.linkedin}`}
@@ -124,7 +132,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.dribbble && (
                                 <ListItem
-                                    icon={<CgDribbble className="mr-2" />}
+                                    icon={<CgDribbble className="mr-2"/>}
                                     title="Dribbble:"
                                     value={social.dribbble}
                                     link={`https://dribbble.com/${social.dribbble}`}
@@ -132,7 +140,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.behance && (
                                 <ListItem
-                                    icon={<FaBehanceSquare className="mr-2" />}
+                                    icon={<FaBehanceSquare className="mr-2"/>}
                                     title="Behance:"
                                     value={social.behance}
                                     link={`https://www.behance.net/${social.behance}`}
@@ -140,7 +148,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.facebook && (
                                 <ListItem
-                                    icon={<FaFacebook className="mr-2" />}
+                                    icon={<FaFacebook className="mr-2"/>}
                                     title="Facebook:"
                                     value={social.facebook}
                                     link={`https://www.facebook.com/${social.facebook}`}
@@ -148,7 +156,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.instagram && (
                                 <ListItem
-                                    icon={<AiFillInstagram className="mr-2" />}
+                                    icon={<AiFillInstagram className="mr-2"/>}
                                     title="Instagram:"
                                     value={social.instagram}
                                     link={`https://www.instagram.com/${social.instagram}`}
@@ -156,7 +164,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.medium && (
                                 <ListItem
-                                    icon={<AiFillMediumSquare className="mr-2" />}
+                                    icon={<AiFillMediumSquare className="mr-2"/>}
                                     title="Medium:"
                                     value={social.medium}
                                     link={`https://medium.com/@${social.medium}`}
@@ -164,7 +172,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.dev && (
                                 <ListItem
-                                    icon={<FaDev className="mr-2" />}
+                                    icon={<FaDev className="mr-2"/>}
                                     title="Dev:"
                                     value={social.dev}
                                     link={`https://dev.to/${social.dev}`}
@@ -172,7 +180,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.stackoverflow && (
                                 <ListItem
-                                    icon={<FaStackOverflow className="mr-2" />}
+                                    icon={<FaStackOverflow className="mr-2"/>}
                                     title="Stack Overflow:"
                                     value={social.stackoverflow.split('/').slice(-1)}
                                     link={`https://stackoverflow.com/users/${social.stackoverflow}`}
@@ -180,7 +188,7 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.website && (
                                 <ListItem
-                                    icon={<FaGlobe className="mr-2" />}
+                                    icon={<FaGlobe className="mr-2"/>}
                                     title="Website:"
                                     value={social.website}
                                     link={social.website}
@@ -188,18 +196,10 @@ const Details = ({ profile, loading, social, github }) => {
                             )}
                             {social?.phone && (
                                 <ListItem
-                                    icon={<RiPhoneFill className="mr-2" />}
+                                    icon={<RiPhoneFill className="mr-2"/>}
                                     title="Phone:"
                                     value={social.phone}
                                     link={`tel:${social.phone}`}
-                                />
-                            )}
-                            {social?.email && (
-                                <ListItem
-                                    icon={<MdMail className="mr-2" />}
-                                    title="Email:"
-                                    value={social.email}
-                                    link={`mailto:${social.email}`}
                                 />
                             )}
                         </Fragment>

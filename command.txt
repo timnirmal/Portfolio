@@ -1,0 +1,55 @@
+1. Initializing a project - Person 1
+
+git init projectName            - initialize a new project
+cd projectName                  - change directory to the project folder
+git add .                       - add all files to the project (stage, not saved yet just marked for commit)
+git commit -m "Initial Commit"  - commit the changes (Save the changes)
+
+git push -u origin master      - push the changes to the remote repository
+
+
+2. Person 2 to clone the project, do work and push to master - Person 2
+
+git clone                       - clone the project from the remote repository
+git pull                        - pull the changes from the remote repository
+    do some work
+git add .                       - add all files to the project (stage, not saved yet just marked for commit)
+git commit -m "Initial Commit"  - commit the changes (Save the changes)
+git push                        - push the changes to the remote repository
+
+3. Person 1 to Pull the changes to master - Person 1
+
+git checkout master             - switch to the master branch
+git pull                        - pull the changes from the remote repository
+    do some work
+git add .                       - add all files to the project (stage, not saved yet just marked for commit)
+git commit -m "Initial Commit"  - commit the changes (Save the changes)
+git push                        - push the changes to the remote repository
+
+4. At same time Person 2 to pull the changes to a different branch - Person 2
+
+git checkout -b newBranch       - create a new branch and switch to it
+git pull                        - pull the changes from the remote repository
+    do some work
+git add .                       - add all files to the project (stage, not saved yet just marked for commit)
+git commit -m "Initial Commit"  - commit the changes (Save the changes)
+git push origin newBranch       - push the changes to the remote repository (new branch)
+
+# Now you can create a pull request from the new branch to the master branch
+
+5. Person 1 to merge the changes from the new branch to the master branch - Person 1
+
+git checkout master             - switch to the master branch
+git pull                        - pull the changes from the remote repository
+git merge newBranch             - merge the changes from the new branch to the master branch
+git push                        - push the changes to the remote repository
+
+# Now you can delete the new branch from the remote repository since it is merged to the master branch
+
+
+
+
+git log --graph --oneline --all --decorate --abbrev-commit --pretty=oneline
+
+
+

@@ -84,46 +84,32 @@ const Project = ({repo, loading, github, googleAnalytics}) => {
                         <div className="flex items-center opacity-60">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
+                                fill="none" viewBox="0 0 24 24"
                                 className="text-base-content inline-block w-5 h-5 mr-2 stroke-current"
                             >
                                 <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
+                                    strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                     d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
                                 ></path>
                             </svg>
                             <span>
-                <h5 className="card-title text-lg text-base-content">
-                  {item.name}
-                </h5>
-              </span>
+                                <h5 className="card-title text-lg text-base-content">
+                                    {item.name}
+                                </h5>
+                            </span>
                         </div>
                         <p className="mb-5 mt-1 text-base-content text-opacity-60 text-sm">
                             {item.description}
                         </p>
                     </div>
                     <div className="flex justify-between text-sm text-base-content text-opacity-60">
-                        <div className="flex flex-grow">
-              <span className="mr-3 flex items-center">
-                <AiOutlineStar className="mr-0.5"/>
-                <span>{item.stargazers_count}</span>
-              </span>
-                            <span className="flex items-center">
-                <AiOutlineFork className="mr-0.5"/>
-                <span>{item.forks_count}</span>
-              </span>
-                        </div>
                         <div>
-              <span className="flex items-center">
-                <div
-                    className="w-3 h-3 rounded-full mr-1 opacity-60"
-                    style={{backgroundColor: languageColor(item.language)}}
-                />
-                <span>{item.language}</span>
-              </span>
+                            <span className="flex items-center">
+                                <div className="w-3 h-3 rounded-full mr-1 opacity-60"
+                                     style={{backgroundColor: languageColor(item.language)}}
+                                />
+                                <span>{item.language}</span>
+                            </span>
                         </div>
                     </div>
                 </div>

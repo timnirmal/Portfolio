@@ -16,7 +16,7 @@ const ListItem = ({ time, qualification, institution, description }) => (
     <h3 className="font-semibold">{qualification}</h3>
     <div className="mb-4 font-light text-sm">{institution}</div>
     <div className="my-0.5 text-xs">{description}</div>
-    <div className="my-0.5 text-xs">{time}</div>
+    {time="undefined - undefined" ?<div></div>: <div className="my-0.5 text-xs">{time}</div>}
 </li>
 );
 

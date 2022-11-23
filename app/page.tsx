@@ -8,20 +8,8 @@ import Education from "../components/education";
 import Academic from "../components/academic";
 import Blog from "../components/blog";
 import Project from "../components/project/project";
-
 import {useEffect, useState} from "react";
-
-import {
-    genericError,
-    getInitialTheme,
-    noConfigError,
-    notFoundError,
-    setupHotjar,
-    tooManyRequestError,
-    sanitizeConfig,
-    skeleton,
-} from '../helpers/utils';
-
+import {sanitizeConfig, skeleton} from '../helpers/utils';
 
 export default function Page() {
     const [theme, setTheme] = useState(null);
@@ -36,7 +24,7 @@ export default function Page() {
         name: 'Thimira Nirmal',
         bio: 'I am a software engineer',
         location: 'Sri Lanka',
-        company: 'Undergraduate',
+        // company: 'Undergraduate',
     };
 
     // setProfile(profileData);
@@ -50,7 +38,7 @@ export default function Page() {
         avatar: 'https://avatars.githubusercontent.com/u/42657815?v=4',
         bio: 'I am a software engineer',
         location: 'Sri Lanka',
-        company: 'Undergraduate',
+        // company: 'Undergraduate',
         socials: {
             github: "github.com/timnirmal",
             linkedin: "linkedin.com/in/thimira-nirmal",
@@ -78,7 +66,7 @@ export default function Page() {
         // stackoverflow: "stackoverflow.com/timnirmal",
     }
 
-    let skills = ["React", "MySQL", "ML"]
+    let skills = ["Python","TypeScript", "NextJS", "Tailwind"]
 
     let experiences = [
         // {
@@ -97,17 +85,18 @@ export default function Page() {
 
     let academic = [
         {
-            school: "School",
-            degree: "Degree",
-            date: "Date",
-            description: "Description",
+            institution: "University of Sri Jayewardenepura",
+            degree: "BSc ENGINEERING (Hons)",
+            from: "December 2019",
+            to: "Present",
+            description: "Minor in Data Management",
         },
-        {
-            school: "School",
-            degree: "Degree",
-            date: "Date",
-            description: "Description",
-        }
+        // {
+        //     school: "School",
+        //     degree: "Degree",
+        //     date: "Date",
+        //     description: "Description",
+        // }
     ]
 
     let education = [
@@ -119,25 +108,59 @@ export default function Page() {
             time: "",
             qualification: "AZ-900: Microsoft Azure Fundamentals",
             institution: "Microsoft",
-            description: "I have completed and passed the AZ-900 Exam",
+            description: "Completed and passed the AZ-900 Exam",
+            // description: "https://www.credly.com/badges/1f9b1f9a-1b5a-4b1f-8f9a-1b5a4b1f8f9a",
+            badge: "https://images.credly.com/size/680x680/images/1f9b1f9a-1b5a-4b1f-8f9a-1b5a4b1f8f9a/AZ-900_600x600.png",
+        },{
+            time: "",
+            qualification: "365 DATA SCIENCE - BUSINESS ANALYST/DATA ANALYST/DATA SCIENTISTS",
+            institution: "365 Data Science",
+            description: "Followed, completed, and passed all the exams and certifications on 365 Data Science.",
+            // description: "https://www.credly.com/badges/1f9b1f9a-1b5a-4b1f-8f9a-1b5a4b1f8f9a",
+            badge: "https://images.credly.com/size/680x680/images/1f9b1f9a-1b5a-4b1f-8f9a-1b5a4b1f8f9a/AZ-900_600x600.png",
+        },
+        {
+            time: "",
+            qualification: "INTRODUCTION TO CYBERSECURITY",
+            institution: "Cisco",
+            description: "Completed this course which was Issued by Cisco.",
             // description: "https://www.credly.com/badges/1f9b1f9a-1b5a-4b1f-8f9a-1b5a4b1f8f9a",
             badge: "https://images.credly.com/size/680x680/images/1f9b1f9a-1b5a-4b1f-8f9a-1b5a4b1f8f9a/AZ-900_600x600.png",
         }
     ]
 
+
     let projects = [
         {
-            name: "Project",
-            description: "Description",
-            link: "",
-            image: "",
+            name: "AI E-COMMERCE SYSTEM",
+            description: "This E-Commerce system has a Customer End (Ecommerce Site) and a Shop End (Admin " +
+                "End) and Python Backend. Machine learning is used for Product Recommendation " +
+                "System, Chatbot and Customer Segmentation. Data Processing, Chat, Image, Report " +
+                "Generation are done with python and FastAPI as Backend.",
+            link: "https://github.com/timnirmal/Ecom-Customer-Shop-End",
+            image: "https://cdn-images-1.medium.com/max/2600/0*kz30LOdXT8CyOymh",
+            language: "JavaScript",
         },
         {
-            name: "Project2",
-            description: "Description2",
-            link: "",
+            name: "COVID PRO - COVID PROTOCOL ASSISTANCE APP FOR SHOPS",
+            description: "Covid Pro is used by shops to ensure that their customers and staff are following some of\n" +
+                "the most essential protocols against the Covid 19 spread",
+            link: "https://github.com/covidpro",
             image: "",
-        }
+            language: "JavaScript",
+        },
+        {
+            name: "READ MINDS CARD GAME - C++",
+            description: "Card Game Which allows Magician and Assistant to Performed a Magic trick in console",
+            link: "https://github.com/timnirmal/Card-Game",
+            image: "",
+        },
+        // {
+        //     name: "Project2",
+        //     description: "Description2",
+        //     link: "",
+        //     image: "",
+        // }
     ]
 
     let blog = {
@@ -208,11 +231,11 @@ export default function Page() {
                             github={github}
                             googleAnalytics={sanitizeConfig.googleAnalytics}
                         />
-                        <Blog
-                            loading={loading}
-                            googleAnalytics={sanitizeConfig.googleAnalytics}
-                            blog={blog}
-                        />
+                        {/*<Blog*/}
+                        {/*    loading={loading}*/}
+                        {/*    googleAnalytics={sanitizeConfig.googleAnalytics}*/}
+                        {/*    blog={blog}*/}
+                        {/*/>*/}
                     </div>
                 </div>
             </div>
