@@ -29,6 +29,7 @@ export default function Page() {
 
     // setProfile(profileData);
     useEffect(() => {
+            // @ts-ignore
             setProfile(profileData);
         }
         , [profileData]);
